@@ -1,6 +1,6 @@
 # ⚡ Chiper Skills
 
-Custom automation skills for [ChiperRouter / 9Router](https://github.com/iamtubasya) — Google OAuth stealth, provider auto-setup, and batch account provisioning.
+Custom automation skills for [ChiperRouter / 9Router](https://github.com/iamtubasya) — Google OAuth stealth, provider auto-setup, batch account provisioning, and crypto airdrop automation.
 
 Built for [Chiper Agent](https://chiper-agent.nousresearch.com) runtime.
 
@@ -19,13 +19,21 @@ Automation skills for ChiperRouter proxy dashboard — adding AI provider connec
 | **[add-kiro](9router/add-kiro/)** | Add Kiro provider via AWS Builder ID + Google OAuth. Stealth signup flow. | Playwright · Python |
 | **[Add-kiro-v1](9router/Add-kiro-v1/)** | Kiro provider v1 — ultra-stealth variant with enhanced anti-detection. | Playwright · Python |
 
+### `interlink/`
+
+Auto-claim $ITLG (Interlink Gold Token) from Interlink Labs. Single script, login once via OTP, claim every 4 hours without re-login.
+
+| Skill | Description | Stack |
+|---|---|---|
+| **[interlink-claim](interlink/)** | Auto-claim ITLG token. OTP login → refresh token → auto-claim. Cron-ready, Android-mimic headers, human-like jitter. | Python · IMAP |
+
 ---
 
 ## 🛠 Requirements
 
 ```bash
 # Python 3.10+
-pip3 install playwright
+pip3 install playwright requests
 playwright install chromium
 ```
 
@@ -35,8 +43,8 @@ playwright install chromium
 
 1. **Clone**
    ```bash
-   git clone https://github.com/iamtubasya/chiper-skill.git
-   cd chiper-skill
+   git clone https://github.com/iamtubasya/chiper-skills.git
+   cd chiper-skills
    ```
 
 2. **Pick a skill** → read the `SKILL.md` inside each folder for triggers, config, and usage.
@@ -48,28 +56,28 @@ playwright install chromium
 ## 📁 Structure
 
 ```
-chiper-skill/
-└── 9router/
-    ├── add-antigravity/     # Google OAuth stealth (v3)
-    │   ├── SKILL.md
-    │   ├── README.md
-    │   ├── config.env.example
-    │   └── scripts/
-    │       ├── google_oauth_stealth.py
-    │       └── batch_run.sh
-    ├── add-cline/           # Cline provider setup
-    │   ├── SKILL.md
-    │   ├── README.md
-    │   └── scripts/
-    │       └── add_cline_provider.py
-    ├── add-kiro/            # Kiro via AWS Builder ID
-    │   ├── SKILL.md
-    │   └── scripts/
-    │       └── signup_kiro.py
-    └── Add-kiro-v1/         # Kiro ultra-stealth variant
-        ├── SKILL.md
-        └── scripts/
-            └── signup_kiro_ultra_stealth.py
+chiper-skills/
+├── 9router/
+│   ├── add-antigravity/     # Google OAuth stealth (v3)
+│   │   ├── SKILL.md
+│   │   ├── README.md
+│   │   ├── config.env.example
+│   │   └── scripts/
+│   ├── add-cline/           # Cline provider setup
+│   │   ├── SKILL.md
+│   │   ├── README.md
+│   │   └── scripts/
+│   ├── add-kiro/            # Kiro via AWS Builder ID
+│   │   ├── SKILL.md
+│   │   └── scripts/
+│   └── Add-kiro-v1/         # Kiro ultra-stealth variant
+│       ├── SKILL.md
+│       └── scripts/
+└── interlink/
+    ├── SKILL.md             # Full documentation
+    └── scripts/
+        ├── claim.py         # Main auto-claim script
+        └── config.json.example
 ```
 
 ---
