@@ -1,93 +1,80 @@
-# ⚡ Chiper Skills
+# Chiper-Cyber Skills
 
-Custom automation skills for [ChiperRouter / 9Router](https://github.com/iamtubasya) — Google OAuth stealth, provider auto-setup, batch account provisioning, and crypto airdrop automation.
+**146 security skill domains** for Hermes Agent — 302 tools, cross-platform support.
 
-Built for [Chiper Agent](https://chiper-agent.nousresearch.com) runtime.
-
----
-
-## 📂 Skills
-
-### `9router/`
-
-Automation skills for ChiperRouter proxy dashboard — adding AI provider connections via stealth OAuth flows.
-
-| Skill | Description | Stack |
-|---|---|---|
-| **[add-antigravity](9router/add-antigravity/)** | Google OAuth stealth automation with anti-detection. Mobile Chromium emulation, auto-ToS, auto-consent, token exchange. 15+ bypass strategies. | Playwright · Python |
-| **[add-cline](9router/add-cline/)** | Add Cline provider via Google OAuth. Pixel 5 mobile emulation to bypass reCAPTCHA. Handles popup, login, authorize, callback. | Playwright · Python |
-| **[add-kiro](9router/add-kiro/)** | Add Kiro provider via AWS Builder ID + Google OAuth. Stealth signup flow. | Playwright · Python |
-| **[Add-kiro-v1](9router/Add-kiro-v1/)** | Kiro provider v1 — ultra-stealth variant with enhanced anti-detection. | Playwright · Python |
-
-### `interlink/`
-
-Auto-claim $ITLG (Interlink Gold Token) from Interlink Labs. Single script, login once via OTP, claim every 4 hours without re-login.
-
-| Skill | Description | Stack |
-|---|---|---|
-| **[interlink-claim](interlink/)** | Auto-claim ITLG token. OTP login → refresh token → auto-claim. Cron-ready, Android-mimic headers, human-like jitter. | Python · IMAP |
-
----
-
-## 🛠 Requirements
+## Quick Start
 
 ```bash
-# Python 3.10+
-pip3 install playwright requests
-playwright install chromium
+# Clone
+git clone https://github.com/iamtubasya/chiper-skills.git
+cd chiper-skills
+
+# Copy skills to Hermes
+cp -r Chiper-Skills/chiper-* ~/.hermes/skills/
+
+# Install all tools
+bash ~/.hermes/skills/chiper-bootstrap/scripts/install.sh
+
+# Verify
+bash ~/.hermes/skills/chiper-bootstrap/scripts/verify.sh
 ```
 
----
+## Skills
 
-## 🚀 Quick Start
+| Category | Count | Examples |
+|----------|-------|---------|
+| Web Exploitation | 15 | sqli, xss, ssrf, xxe, auth-bypass |
+| Network | 8 | pentest, sniffing-mitm, tunneling, dns |
+| AD/Identity | 5 | ad-ldap, ad-cs, identity-provider, cloud-identity |
+| Cloud/Container | 6 | cloud-security, kubernetes, container, gitops |
+| Wireless/RF | 6 | wifi, bluetooth-rfid-nfc, sdr-rf, hf-vhf |
+| Reverse Engineering | 4 | binary, firmware, reverse-adv, malware-adv |
+| Blockchain/Web3 | 2 | blockchain-web3, blockchain-l2 |
+| AI/LLM | 7 | ai-security, llm-red-team, ai-fuzzing, ai-agent |
+| SCADA/ICS | 3 | scada-ics, ics-fieldbus, cps |
+| 5G/6G Telecom | 2 | 5g-telecom, 5g-6g-advanced |
+| IoT/Embedded | 3 | iot-pentest, embedded-rtos, hardware |
+| Forensics | 3 | digital-forensics, anti-forensics, steganography |
+| OSINT/Social | 5 | osint, recon-osint, social-engineering, darkweb |
+| Post-Exploit | 4 | post-exploitation, privilege-esc, av-edr-evasion |
+| And more... | 67 | crypto, payment, voip, automotive, satellite, etc. |
 
-1. **Clone**
-   ```bash
-   git clone https://github.com/iamtubasya/chiper-skills.git
-   cd chiper-skills
-   ```
+## Bootstrap (Must Run First)
 
-2. **Pick a skill** → read the `SKILL.md` inside each folder for triggers, config, and usage.
+```bash
+# Install 302 tools across all skills
+bash ~/.hermes/skills/chiper-bootstrap/scripts/install.sh
 
-3. **Run scripts** → each skill has a `scripts/` folder with ready-to-run automation.
-
----
-
-## 📁 Structure
-
-```
-chiper-skills/
-├── 9router/
-│   ├── add-antigravity/     # Google OAuth stealth (v3)
-│   │   ├── SKILL.md
-│   │   ├── README.md
-│   │   ├── config.env.example
-│   │   └── scripts/
-│   ├── add-cline/           # Cline provider setup
-│   │   ├── SKILL.md
-│   │   ├── README.md
-│   │   └── scripts/
-│   ├── add-kiro/            # Kiro via AWS Builder ID
-│   │   ├── SKILL.md
-│   │   └── scripts/
-│   └── Add-kiro-v1/         # Kiro ultra-stealth variant
-│       ├── SKILL.md
-│       └── scripts/
-└── interlink/
-    ├── SKILL.md             # Full documentation
-    └── scripts/
-        ├── claim.py         # Main auto-claim script
-        └── config.json.example
+# Phase options:
+#   --phase 1  → System detection
+#   --phase 2  → apt packages (223)
+#   --phase 3  → pip packages (59)
+#   --phase 4  → Go binaries (12)
+#   --phase 5  → Manual downloads (8)
+#   --phase all → Everything (default)
 ```
 
----
+## Per-Skill Tool Check
 
-## ⚠️ Disclaimer
+Each skill auto-checks tools when invoked:
+- ✅ Tools installed → Execute immediately
+- ⚠️ Missing tools → Show install command → Install → Execute
 
-These skills are designed for personal automation on your own infrastructure. Use responsibly and in accordance with each service's terms.
+## OS Support
 
----
+| OS | Status |
+|----|--------|
+| Kali Linux | ✅ Full |
+| Ubuntu 22.04/24.04 | ✅ (auto-adds Kali repo) |
+| Debian 12+ | ✅ (auto-adds Kali repo) |
+| Parrot OS | ✅ Full |
 
-## 📜 License
+## Links
 
-MIT
+- **Bootstrap skill**: [`Chiper-Skills/chiper-bootstrap/`](Chiper-Skills/chiper-bootstrap/)
+- **Tool inventory**: [`Chiper-Skills/chiper-bootstrap/references/tool-inventory.md`](Chiper-Skills/chiper-bootstrap/references/tool-inventory.md)
+- **Full skill list**: See [`SKILL.md`](SKILL.md) for complete directory structure
+
+## License
+
+For authorized security testing only.
