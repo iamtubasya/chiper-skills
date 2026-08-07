@@ -19,13 +19,13 @@ Automation skills for ChiperRouter proxy dashboard — adding AI provider connec
 | **[add-kiro](9router/add-kiro/)** | Add Kiro provider via AWS Builder ID + Google OAuth. Stealth signup flow. | Playwright · Python |
 | **[Add-kiro-v1](9router/Add-kiro-v1/)** | Kiro provider v1 — ultra-stealth variant with enhanced anti-detection. | Playwright · Python |
 
-### `interlink/`
+### `airdrop/interlink/`
 
 Auto-claim $ITLG (Interlink Gold Token) from Interlink Labs. Single script, login once via OTP, claim every 4 hours without re-login.
 
 | Skill | Description | Stack |
 |---|---|---|
-| **[interlink-claim](interlink/)** | Auto-claim ITLG token. OTP login → refresh token → auto-claim. Cron-ready, Android-mimic headers, human-like jitter. | Python · IMAP |
+| **[interlink-claim](airdrop/interlink/)** | Auto-claim ITLG token. OTP login → refresh token → auto-claim. Cron-ready, Android-mimic headers, human-like jitter. | Python · IMAP |
 
 ### `chiper-cyber/`
 
