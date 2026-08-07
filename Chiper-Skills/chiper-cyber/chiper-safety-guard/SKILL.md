@@ -1,0 +1,46 @@
+---
+name: chiper-safety-guard
+description: "Use when Before executing ANY potentially destructive or irreversible command - When a command targets production or critical infrastructure - When operating under a defined r"
+version: "0.2.0"
+author: ChiperFlux (Chiper-Cyber)
+metadata:
+  hermes:
+    tags: [pentest, security, kali-linux, chiper-cyber, safety, guard]
+references:
+  - path: ~/.hermes/skills/chiper-cyber/chiper-safety-guard/SKILL.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-safety-guard/payloads.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-safety-guard/test-cases.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-safety-guard/guides
+---
+
+# Safety Guard
+
+## When to Use
+
+Safety Guard skill domain covering defense operations.
+
+**Domain**: defense
+
+## Instructions
+
+Read the referenced chiper-cyber files for full methodology:
+- **SKILL.md** — Step-by-step methodology, attack chain, tools, and defense perspective
+- **payloads.md** — Ready-to-use attack payloads organized by type and technique
+- **test-cases.md** — Structured test procedures with prerequisites and expected results
+- **guides/** — Deep-dive learning materials and scripts
+
+Full skill content at: `~/.hermes/skills/chiper-cyber/chiper-safety-guard/`
+
+## Examples
+
+See `payloads.md` in the referenced directory for ready-to-use attack payloads.
+
+## Test Cases
+
+See `test-cases.md` in the referenced directory for structured test procedures.
+
+## Notes
+
+- Source: chiper-cyber v0.2.0.4 — Agent Skills Open Standard (Anthropic 2025)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/chiper-cyber && git pull`

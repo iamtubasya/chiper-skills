@@ -1,0 +1,55 @@
+---
+name: chiper-codebase-onboarding
+description: "Use when Rapidly acquire a mental model of any unfamiliar codebase — from a 500-line script to a 100M+ line monorepo. This skill transforms raw code into structured int"
+version: "0.2.0"
+author: ChiperFlux (Chiper-Cyber)
+metadata:
+  hermes:
+    tags: [pentest, security, kali-linux, chiper-cyber, codebase, onboarding]
+references:
+  - path: ~/.hermes/skills/chiper-cyber/chiper-codebase-onboarding/SKILL.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-codebase-onboarding/payloads.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-codebase-onboarding/test-cases.md
+  - path: ~/.hermes/skills/chiper-cyber/chiper-codebase-onboarding/guides
+---
+
+# Codebase Onboarding
+
+## When to Use
+
+This skill transforms raw code into structured intelligence: architecture maps, entry points, data flows, security surfaces, and onboarding confidence scores.
+
+**Domain**: knowledge
+
+## Methodology Overview
+
+### Phase 1: Orientation
+
+- Count files, LOC, and language distribution
+- Identify primary language(s) and detect framework
+- Map top-level directory structure to functional areas
+- Find entry points and main execution paths
+
+## Instructions
+
+Read the referenced chiper-cyber files for full methodology:
+- **SKILL.md** — Step-by-step methodology, attack chain, tools, and defense perspective
+- **payloads.md** — Ready-to-use attack payloads organized by type and technique
+- **test-cases.md** — Structured test procedures with prerequisites and expected results
+- **guides/** — Deep-dive learning materials and scripts
+
+Full skill content at: `~/.hermes/skills/chiper-cyber/chiper-codebase-onboarding/`
+
+## Examples
+
+See `payloads.md` in the referenced directory for ready-to-use attack payloads.
+
+## Test Cases
+
+See `test-cases.md` in the referenced directory for structured test procedures.
+
+## Notes
+
+- Source: chiper-cyber v0.2.0.4 — Agent Skills Open Standard (Anthropic 2025)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/chiper-cyber && git pull`

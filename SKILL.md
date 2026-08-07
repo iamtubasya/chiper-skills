@@ -1,176 +1,137 @@
 ---
 name: chiper-cyber
 description: >
-  Use when installing, placing, or managing chiper-* skills in Hermes Agent.
-  Covers skill placement to ~/.hermes/skills/, environment bootstrap,
-  tool verification, and cross-skill dependency resolution.
-tags: [setup, skills, installation, placement, management]
+  Chiper Cyber skill ecosystem — 144 security domains with 302 tools.
+  Use this SKILL.md as entrypoint to install, place, and manage all chiper-* skills.
+  Supports Kali Linux, Ubuntu, Debian, and other Linux distributions.
+tags: [bootstrap, install, placement, skills, chiper, cybersecurity]
+author: ChiperFlux (Chiper-Cyber)
 ---
 
-# Chiper-Cyber Skill Ecosystem
+# Chiper-Cyber — Skill Ecosystem
 
 ## Overview
 
-**146 skills** across offensive security, covering:
+**144 security skill domains** covering:
+- Web Exploitation, Network Pentest, Cloud Security
+- Active Directory, OSINT, Digital Forensics
+- AI/LLM Red Team, Blockchain/Web3, 5G/6G Telecom
+- IoT, SCADA/ICS, Wireless, Bluetooth, RF/SDR
+- Reverse Engineering, Malware Analysis, Exploit Dev
+- And 120+ more domains
 
-- Web Exploitation (SQLi, XSS, SSRF, XXE, RCE, SSTI)
-- Network Pentest (recon, scanning, exploitation, pivoting)
-- Active Directory (Kerberos, LDAP, Certificate abuse)
-- Cloud Security (AWS, Azure, GCP, Kubernetes)
-- Wireless (WiFi, Bluetooth, RFID, NFC, SDR)
-- Reverse Engineering (binary, firmware, malware)
-- Blockchain / Web3 (Solidity, DeFi, bridge attacks)
-- AI/LLM Red Team (prompt injection, jailbreak, agent attack)
-- SCADA/ICS (Modbus, DNP3, PROFINET, OPC UA)
-- 5G/6G Telecom (5G Core, RAN, O-RAN, signaling)
-- And 120+ more domains...
+**302 tools** referenced across all skills:
+- 223 apt packages (system tools)
+- 59 pip packages (Python libraries)
+- 12 go binaries (Go-based tools)
+- 8 manual downloads (GUI/commercial)
 
 ---
 
-## Skill Placement
+## Installation
 
-### Target Directory
-
-```
-~/.hermes/skills/chiper-*/SKILL.md
-```
-
-### Quick Install (All Skills)
+### Quick Start (One Command)
 
 ```bash
-# Clone this repo
+# Clone and install everything
 git clone https://github.com/iamtubasya/chiper-skills.git /tmp/chiper-skills
+cd /tmp/chiper-skills
 
-# Copy all skills to Hermes
-cp -r /tmp/chiper-skills/Chiper-Skills/chiper-* ~/.hermes/skills/
+# Copy chiper-cyber to Hermes skills directory
+cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+
+# Install all tools (run bootstrap first)
+bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 
 # Verify
-ls ~/.hermes/skills/chiper-* | wc -l
-# Expected: 146
+bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/verify.sh
 ```
 
-### Selective Install (One Skill)
+### Manual Step-by-Step
 
 ```bash
-# Copy only what you need
-cp -r /tmp/chiper-skills/Chiper-Skills/chiper-web-sqli ~/.hermes/skills/
-cp -r /tmp/chiper-skills/Chiper-Skills/chiper-network-pentest ~/.hermes/skills/
+# 1. Copy skills
+cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+
+# 2. Verify skills loaded
+hermes skills list | grep chiper
+
+# 3. Install tools
+bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh --phase all
 ```
-
-### From GitHub (Raw)
-
-```bash
-# Download single skill
-mkdir -p ~/.hermes/skills/chiper-web-sqli
-curl -sL https://raw.githubusercontent.com/iamtubasya/chiper-skills/main/Chiper-Skills/chiper-web-sqli/SKILL.md \
-  -o ~/.hermes/skills/chiper-web-sqli/SKILL.md
-```
-
----
-
-## Environment Bootstrap
-
-**Run `chiper-bootstrap` FIRST on any new environment:**
-
-```bash
-# Install all 302 tools referenced across 146 skills
-bash ~/.hermes/skills/chiper-bootstrap/scripts/install.sh
-
-# Verify installation
-bash ~/.hermes/skills/chiper-bootstrap/scripts/verify.sh
-```
-
-### What Gets Installed
-
-| Phase | Tools | Method |
-|-------|-------|--------|
-| System | 223 packages | `apt install` |
-| Python | 59 libraries | `pip install` |
-| Go | 12 binaries | `go install` |
-| Manual | 8 tools | Download |
-
----
-
-## Per-Skill Tool Check
-
-Every skill with CLI tools has a `## Prerequisites` section:
-
-```bash
-# Example: chiper-web-sqli checks before running
-MISSING=""
-for cmd in curl sqlmap; do
-  command -v "$cmd" >/dev/null 2>&1 || MISSING="$MISSING $cmd"
-done
-[ -z "$MISSING" ] && echo "✅ All tools ready" && exit 0
-echo "⚠️  Missing:$MISSING"
-# → Install only what's missing
-```
-
-**Logic:** Check → Missing? → Install ONLY that tool → Execute
 
 ---
 
 ## Directory Structure
 
 ```
-Chiper-Cyber/
-├── SKILL.md                      ← This file (placement guide)
-├── Chiper-Skills/
-│   ├── chiper-bootstrap/         ← RUN FIRST (tool installer)
-│   │   ├── SKILL.md
-│   │   ├── scripts/install.sh
-│   │   ├── scripts/verify.sh
-│   │   └── references/tool-inventory.md
-│   ├── chiper-web-sqli/
-│   │   └── SKILL.md              ← Has ## Prerequisites
-│   ├── chiper-exploit-development/
-│   │   └── SKILL.md
-│   ├── chiper-network-pentest/
-│   │   └── SKILL.md
-│   └── ... (146 skills total)
-├── README.md
-└── .gitignore
+~/.hermes/skills/chiper-cyber/
+├── chiper-bootstrap/             ← MUST RUN FIRST
+│   ├── SKILL.md
+│   ├── scripts/install.sh        ← Full installer (302 tools)
+│   ├── scripts/verify.sh         ← Verification script
+│   └── references/tool-inventory.md
+├── chiper-kali-tools/            ← Tool selection reference
+├── chiper-kali-identity/         ← 12 Hacker Laws, skill matrix
+├── chiper-web-sqli/              ← SQL injection
+├── chiper-exploit-development/   ← Exploit dev
+├── chiper-network-pentest/       ← Network pentest
+└── ... (144 skills total)
 ```
+
+---
+
+## Skill Priority Order
+
+```
+1. chiper-bootstrap        ← Install tools first
+2. chiper-kali-tools       ← Tool selection reference
+3. chiper-kali-identity    ← 12 Laws, skill matrix
+4. chiper-*                ← All other skills
+```
+
+---
+
+## Per-Skill Tool Check
+
+Each skill has a `## Prerequisites` section that:
+1. Lists required tools for that specific skill
+2. Checks which tools are already installed
+3. Shows install commands ONLY for missing tools
+4. Skips already-installed tools
 
 ---
 
 ## OS Support
 
-| OS | Bootstrap | Skills |
-|----|-----------|--------|
-| Kali Linux (headless) | ✅ Full | ✅ |
-| Kali Linux (default/large) | ✅ Full | ✅ |
-| Ubuntu 22.04/24.04 | ✅ (adds Kali repo) | ✅ |
-| Debian 12+ | ✅ (adds Kali repo) | ✅ |
-| Parrot OS | ✅ Full | ✅ |
-| Arch Linux | ⚠️ Partial | ✅ |
-
----
-
-## Priority Order
-
-```
-1. chiper-bootstrap    ← Install tools first
-2. chiper-kali-tools   ← Tool selection reference
-3. chiper-kali-identity ← 12 Hacker Laws, skill matrix
-4. chiper-*            ← All other skills (pick what you need)
-```
+| OS | Status | Notes |
+|----|--------|-------|
+| Kali Linux (headless) | ✅ Full | Most tools pre-installed |
+| Kali Linux (default/large) | ✅ Full | All tools pre-installed |
+| Ubuntu 22.04/24.04 | ✅ Full | Adds Kali repo with pin priority |
+| Debian 12+ | ✅ Full | Adds Kali repo with pin priority |
+| Parrot OS | ✅ Full | Most tools pre-installed |
 
 ---
 
 ## Updating
 
 ```bash
-# Pull latest skills
 cd /tmp/chiper-skills && git pull
-cp -r /tmp/chiper-skills/Chiper-Skills/chiper-* ~/.hermes/skills/
-
-# Re-verify tools
-bash ~/.hermes/skills/chiper-bootstrap/scripts/verify.sh
+cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 ```
+
+---
+
+## Links
+
+- **Repo**: https://github.com/iamtubasya/chiper-skills
+- **Bootstrap**: `chiper-cyber/chiper-bootstrap/`
 
 ---
 
 ## License
 
-For authorized security testing only. Use responsibly.
+Unauthorized access to computer systems is illegal.
+Use these skills only on systems you own or have explicit written permission to test.
