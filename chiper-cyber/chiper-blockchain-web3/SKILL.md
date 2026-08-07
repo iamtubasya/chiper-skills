@@ -94,6 +94,6 @@ See `test-cases.md` in the referenced directory for structured test procedures.
 
 ## Notes
 
-- Source: chiper-cyber v0.2.0.4 — Agent Skills Open Standard (Anthropic 2025)
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
 - Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
-- Update: `cd ~/.hermes/chiper-cyber && git pull`
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`

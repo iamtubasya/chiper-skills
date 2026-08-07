@@ -39,7 +39,7 @@ When needing distilled operational knowledge: key decisions, lessons learned, pr
 
 ## Instructions
 
-- **MEMORY.md** — Carefully selected long-term knowledge (v0.2.0.4, updated 2026-07-26)
+- **MEMORY.md** — Carefully selected long-term knowledge (v1.0.0, updated 2026-07-26)
 - **memory/2026-05-05-deep-research-migration-report.md** — Deep research capability migration analysis
 
 ## Memory (Current Status)
@@ -48,7 +48,7 @@ When needing distilled operational knowledge: key decisions, lessons learned, pr
 
 _Carefully selected distilled knowledge. Like human long-term memory — not raw logs, but the essence of experience._
 
-**Last Updated**: 2026-07-26 (v0.2.0.4)
+**Last Updated**: 2026-07-26 (v1.0.0)
 
 ---
 
@@ -56,19 +56,19 @@ _Carefully selected distilled knowledge. Like human long-term memory — not raw
 
 - **Project Phase**: Phase 1 SKILL Library Enhancement — Task 1.2 Phase 2 in progress (20/100 standard SKILLs)
 - **Tools Mastered**: 518/518 (100%) Kali Linux tools
-- **Skill Domains**: **130** (15 P0/P1 at v0.2.0.2 Defense Triple standard + 20 Phase 2 standardized + 95 pending)
+- **Skill Domains**: **130** (15 P0/P1 at v1.0.0 Defense Triple standard + 20 Phase 2 standardized + 95 pending)
 - **Uptime**: ~19 weeks (since 2026-03-14 launch)
 - **Current Focus**: Phase 2 standardization (10 batches × 10 SKILLs), Task 1.3 new SKILL creation (7 candidates), Defense Triple rollout
-- **Strategic Positioning**: chiper-cyber as dedicated SKILL library maintainer (v0.2.0.1 pivot); xAgent project will transform SKILLs into deliverable agents
+- **Strategic Positioning**: chiper-cyber as dedicated SKILL library maintainer (v1.0.0 pivot); xAgent project will transform SKILLs into deliverable agents
 
-### Defense Triple Standard (v0.2.0.2+)
+### Defense Triple Standard (v1.0.0+)
 
 All newly standardized SKILLs include:
 1. **Defense Perspective** — Multi-layer defense matrix (table format, ≥5 layers)
 2. **Detection Methods** — SIEM-ready rules (Sigma / Splunk SPL / Sysmon / Falco)
 3. **Defense Evasion Techniques** — Modern attacker evasion patterns (5+ categories)
 
-As of 2026-07-26: **35/130 SKILLs (27%) at v0.2.0.2 standard**.
+As of 2026-07-26: **35/130 SKILLs (27%) at v1.0.0 standard**.
 
 ---
 
@@ -89,12 +89,12 @@ As of 2026-07-26: **35/130 SKILLs (27%) at v0.2.0.2 standard**.
 - All 65 levels completed, Double Query injection reached expert level
 - Developed automated testing tools
 
-### 2026-05-14: Attack Surface Expansion (v0.1.5)
+### 2026-05-14: Attack Surface Expansion (v1.0.0)
 - Added AI Fuzzing (coverage-guided fuzzing with AFL++, libFuzzer) and Council (multi-perspective security analysis)
 - Enhanced mobile-security, cloud-security, and security-bounty-hunter with deep-dive guides
 - Established three-perspective framework: Attack / Defense / Audit
 
-### 2026-05-14: Infrastructure Operationalization (v0.1.6)
+### 2026-05-14: Infrastructure Operationalization (v1.0.0)
 - Enriched 10 infrastructure skills from "understand" to "executable" using three-tier strategy (FULL/PARTIAL/MINIMAL)
 - Three-tier enrichment proved effective: prioritize operational skills first, meta-skills last
 
@@ -102,4 +102,6 @@ As of 2026-07-26: **35/130 SKILLs (27%) at v0.2.0.2 standard**.
 
 ## Notes
 
-- Source: chiper-cyber v0.2.0.4, last updated 2026-07-26
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`

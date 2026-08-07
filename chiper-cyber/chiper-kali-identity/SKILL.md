@@ -81,4 +81,6 @@ Read referenced files for complete identity data:
 
 ## Notes
 
-- Source: chiper-cyber v0.2.0.4, 137 domains, 518 tools (100%)
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`

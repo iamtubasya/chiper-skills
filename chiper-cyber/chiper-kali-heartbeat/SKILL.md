@@ -117,4 +117,6 @@ _Last updated: 2026-06-02_
 
 ## Notes
 
-Run from: `cd /home/chiper/.hermes/chiper-cyber`
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`

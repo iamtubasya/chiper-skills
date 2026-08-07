@@ -118,3 +118,9 @@ source ~/.hermes/venv/bin/activate
 # If Go tools fail: check Go version
 go version  # need 1.21+
 ```
+
+## Notes
+
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`

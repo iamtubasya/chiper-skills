@@ -134,4 +134,6 @@ Skills define _how_ tools work. This file records _your_ specific configuration 
 
 ## Notes
 
-- Environment: Kali Linux 2025-2, ARM64. All 518/518 tools mastered (100%).
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`
