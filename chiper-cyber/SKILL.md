@@ -38,7 +38,7 @@ git clone https://github.com/iamtubasya/chiper-skills.git /tmp/chiper-skills
 cd /tmp/chiper-skills
 
 # Copy chiper-cyber to Hermes skills directory
-cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+cp -r chiper-cyber ~/.hermes/skills/
 
 # Install all tools (run bootstrap first)
 bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
@@ -51,7 +51,7 @@ bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/verify.sh
 
 ```bash
 # 1. Copy skills
-cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+cp -r chiper-cyber ~/.hermes/skills/
 
 # 2. Verify skills loaded
 hermes skills list | grep chiper
@@ -117,8 +117,8 @@ Each skill has a `## Prerequisites` section that:
 ## Updating
 
 ```bash
-cd /tmp/chiper-skills && git pull
-cp -r Chiper-Skills/chiper-cyber ~/.hermes/skills/
+cd ~/.hermes/skills/chiper-cyber && git pull
+cp -r chiper-cyber ~/.hermes/skills/
 bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 ```
 
@@ -135,3 +135,9 @@ bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 
 Unauthorized access to computer systems is illegal.
 Use these skills only on systems you own or have explicit written permission to test.
+
+## Notes
+
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
+- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`
