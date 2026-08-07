@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Google OAuth Automation v2 - Mobile Stealth Mode
-ChiperRouter provider setup with proper exchange endpoint handling
+9Router provider setup with proper exchange endpoint handling
 """
 
 import asyncio

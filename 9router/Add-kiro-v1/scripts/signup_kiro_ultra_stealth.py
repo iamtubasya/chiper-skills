@@ -15,8 +15,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger("ultra_stealth")
 
 # Config
-DASHBOARD_URL = "https://api.chiperflux.site/dashboard/providers/kiro"
-LOGIN_URL = "https://api.chiperflux.site/login"
+DASHBOARD_URL = "http://localhost:20128/dashboard/providers/kiro"
+LOGIN_URL = "http://localhost:20128/login"
 DASHBOARD_PASS = os.environ.get("DASHBOARD_PASS", "YOUR_DASHBOARD_PASSWORD")
 GOOGLE_EMAIL = os.environ.get("GOOGLE_EMAIL", "your-email@domain.com")
 GOOGLE_PASS = os.environ.get("GOOGLE_PASS", "YOUR_GOOGLE_PASSWORD")

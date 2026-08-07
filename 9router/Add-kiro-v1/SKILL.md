@@ -1,13 +1,13 @@
 ---
-name: chiperrouter-add-kiro
-description: Add new Kiro provider account via AWS Builder ID with Google OAuth to ChiperRouter Proxy dashboard
+name: 9router-add-kiro
+description: Add new Kiro provider account via AWS Builder ID with Google OAuth to 9Router Proxy dashboard
 tags: [automation, kiro, aws, oauth, google, playwright, stealth]
 version: 1.0.0
 ---
 
-# ChiperRouter Add Kiro Provider
+# 9Router Add Kiro Provider
 
-Automate adding new Kiro AI provider accounts to ChiperRouter Proxy dashboard via AWS Builder ID signup using Google OAuth.
+Automate adding new Kiro AI provider accounts to 9Router Proxy dashboard via AWS Builder ID signup using Google OAuth.
 
 ## Trigger Conditions
 - User asks to add new Kiro provider connection
@@ -15,7 +15,7 @@ Automate adding new Kiro AI provider accounts to ChiperRouter Proxy dashboard vi
 - Need to increase Kiro connections count on dashboard
 
 ## Prerequisites
-- ChiperRouter Proxy dashboard access (https://api.chiperflux.site)
+- 9Router Proxy dashboard access (http://localhost:20128)
 - Google Workspace account (your-email@domain.com / your-password)
 - Playwright installed with chromium
 - Python 3.10+
@@ -23,8 +23,8 @@ Automate adding new Kiro AI provider accounts to ChiperRouter Proxy dashboard vi
 ## Configuration
 
 ```python
-DASHBOARD_URL = "https://api.chiperflux.site/dashboard/providers/kiro"
-LOGIN_URL = "https://api.chiperflux.site/login"
+DASHBOARD_URL = "http://localhost:20128/dashboard/providers/kiro"
+LOGIN_URL = "http://localhost:20128/login"
 DASHBOARD_PASS = "YOUR_DASHBOARD_PASSWORD"
 GOOGLE_EMAIL = "your-email@domain.com"
 GOOGLE_PASS = "YOUR_GOOGLE_PASSWORD"
@@ -38,12 +38,12 @@ GOOGLE_PASS = "YOUR_GOOGLE_PASSWORD"
 ## Step-by-Step Flow
 
 ### Step 1: Login to Dashboard
-- Navigate to https://api.chiperflux.site/login
+- Navigate to http://localhost:20128/login
 - Fill password: (your dashboard password)
 - Click Login button
 
 ### Step 2: Check Current Connections
-- Navigate to https://api.chiperflux.site/dashboard/providers/kiro
+- Navigate to http://localhost:20128/dashboard/providers/kiro
 - Note current connection count (e.g., "9 connections")
 - This is the BEFORE count
 
@@ -171,7 +171,7 @@ await context.add_init_script("""
 ## Success Example
 ```
 STEP 1: Login to dashboard
-Logged in: https://api.chiperflux.site/dashboard
+Logged in: http://localhost:20128/dashboard
 STEP 2: Navigate to Kiro providers
 Current connections: 9
 STEP 3: Click Add button

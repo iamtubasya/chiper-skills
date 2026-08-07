@@ -1,23 +1,23 @@
 ---
-name: cline-add-provider
-description: Automate adding Cline OAuth provider connections to ChiperRouter (localhost:20129). Uses Playwright async with Pixel 5 mobile emulation to bypass Google reCAPTCHA. Handles popup, Google login, Cline Authorize page, and callback redirect.
+name: 9router-add-cline
+description: Automate adding Cline OAuth provider connections to 9Router (localhost:20128). Uses Playwright async with Pixel 5 mobile emulation to bypass Google reCAPTCHA. Handles popup, Google login, Cline Authorize page, and callback redirect.
 triggers:
   - add cline provider
   - tambah provider cline
   - oauth cline
   - cline google oauth
   - localhost 20129 provider cline
-  - chiperrouter cline
+  - 9router cline
 version: 1.0.0
-author: Tubasya
-tags: [automation, oauth, cline, chiperrouter, google, playwright, mobile-emulation]
+author: ChiperFlux (9Router)
+tags: [automation, oauth, cline, 9router, google, playwright, mobile-emulation]
 ---
 
-# Add Cline Provider to ChiperRouter
+# Add Cline Provider to 9Router
 
 ## Objective
 
-Automate adding Google OAuth Cline provider connections to ChiperRouter dashboard at `http://localhost:20129/dashboard/providers/cline`.
+Automate adding Google OAuth Cline provider connections to 9Router dashboard at `http://localhost:20128/dashboard/providers/cline`.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ No additional packages needed — uses only `playwright.async_api`, stdlib (`asy
 ## Architecture Overview
 
 ```
-Dashboard (localhost:20129)
+Dashboard (localhost:20128)
   → Click "Add" button
     → Popup opens to authkit.cline.bot
       → Click "Continue with Google"
@@ -40,13 +40,13 @@ Dashboard (localhost:20129)
             → [Optional: ToS / Consent pages]
               → Redirect to app.cline.bot/auth/callback
                 → Click "Authorize" button on Cline consent page
-                  → Redirect to localhost:20129/callback?code=...
+                  → Redirect to localhost:20128/callback?code=...
                     → Connection saved automatically ✅
 ```
 
 ## Critical Difference from Antigravity (9Router)
 
-| Aspect | Antigravity (9Router) | Cline (ChiperRouter) |
+| Aspect | Antigravity (9Router) | Cline (9Router) |
 |--------|----------------------|---------------------|
 | Port | 20128 | 20129 |
 | Add button | Same-page navigation | Opens **popup window** |
@@ -143,7 +143,7 @@ async def human_click(page, selector):
 ### Step 1: Login to Dashboard
 
 ```python
-await page.goto("http://localhost:20129/login", wait_until='domcontentloaded')
+await page.goto("http://localhost:20128/login", wait_until='domcontentloaded')
 pwd = page.locator('input[type="password"]')
 if await pwd.count() > 0:
     await pwd.fill(DASHBOARD_PASS)
@@ -153,7 +153,7 @@ if await pwd.count() > 0:
 ### Step 2: Navigate to Cline Provider Page
 
 ```python
-await page.goto("http://localhost:20129/dashboard/providers/cline", wait_until='domcontentloaded')
+await page.goto("http://localhost:20128/dashboard/providers/cline", wait_until='domcontentloaded')
 # Count existing connections for verification later
 content = await page.content()
 before_match = re.search(r'(\d+)\s*connection', content)
@@ -229,8 +229,8 @@ for attempt in range(10):
         if await auth_btn.count() > 0:
             await auth_btn.first.click()  # Click "Authorize"
             await delay(5000, 8000)
-            # After Authorize → redirects to localhost:20129/callback?code=...
-            if "localhost:20129" in auth_page.url:
+            # After Authorize → redirects to localhost:20128/callback?code=...
+            if "localhost:20128" in auth_page.url:
                 await page.goto(auth_page.url, wait_until='domcontentloaded')
                 break
         continue
@@ -246,7 +246,7 @@ for attempt in range(10):
         ...
 ```
 
-**Key insight:** The page `app.cline.bot/auth/callback` shows an "Authorization Request" consent page with an **"Authorize" button**. You MUST click it. After clicking, it redirects to `localhost:20129/callback?code=eyJhY...` which saves the connection automatically.
+**Key insight:** The page `app.cline.bot/auth/callback` shows an "Authorization Request" consent page with an **"Authorize" button**. You MUST click it. After clicking, it redirects to `localhost:20128/callback?code=eyJhY...` which saves the connection automatically.
 
 ### Step 8: Verify
 
@@ -255,7 +255,7 @@ for attempt in range(10):
 if auth_page != page:
     await auth_page.close()
 
-await page.goto("http://localhost:20129/dashboard/providers/cline", wait_until='domcontentloaded')
+await page.goto("http://localhost:20128/dashboard/providers/cline", wait_until='domcontentloaded')
 content = await page.content()
 after_match = re.search(r'(\d+)\s*connection', content)
 after_count = int(after_match.group(1)) if after_match else 0
@@ -267,10 +267,10 @@ if after_count > before_count:
 ## Verification (Database)
 
 ```bash
-cd /usr/local/lib/node_modules/chiperrouter/app
+cd /usr/local/lib/node_modules/9router/app
 node -e "
 const Database = require('better-sqlite3');
-const db = new Database('/root/.chiperrouter/db/data.sqlite');
+const db = new Database('/root/.9router/db/data.sqlite');
 const rows = db.prepare(\"SELECT email FROM providerConnections WHERE provider='cline'\").all();
 console.log('Connections:', rows.length);
 rows.forEach(r => console.log('  ' + r.email));
@@ -286,7 +286,7 @@ db.close();
 | Google 500 Internal Server Error | Browserbase/cloud browser IP blacklisted | Use **local Playwright Chromium**, not Browserbase |
 | Popup not detected | `expect_page()` timeout | Add fallback: treat current page as auth_page |
 | Connection not saved after Google login | Forgot to click "Authorize" on Cline consent page | Must click **"Authorize"** button at `app.cline.bot/auth/callback` |
-| Stuck on app.cline.bot/auth/callback | Authorize button not clicked, or redirect failed | Click Authorize, then capture `localhost:20129/callback?code=` URL |
+| Stuck on app.cline.bot/auth/callback | Authorize button not clicked, or redirect failed | Click Authorize, then capture `localhost:20128/callback?code=` URL |
 | Password field not found | Page still loading after email step | Add `delay(2000, 4000)` before password step, use `state='attached'` not `'visible'` |
 | Stealth not applied on popup | Only injected on main page | Call `auth_page.add_init_script(STEALTH_JS)` on popup page too |
 | Script output not visible | Python buffering stdout | Add `flush=True` to all `print()` calls |

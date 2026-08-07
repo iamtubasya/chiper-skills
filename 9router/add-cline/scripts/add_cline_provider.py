@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Add Cline OAuth Provider to ChiperRouter
+Add Cline OAuth Provider to 9Router
 ==========================================
 Mobile Emulation (Pixel 5) + Stealth JS = Bypass Google reCAPTCHA
 
 Usage:
     python3 add_cline_provider.py                           # uses defaults
     python3 add_cline_provider.py --email x@y.com --password abc123
-    python3 add_cline_provider.py --dashboard-url http://localhost:20129
+    python3 add_cline_provider.py --dashboard-url http://localhost:20128
     python3 add_cline_provider.py --dashboard-pass mypass
 
 Requirements:
@@ -27,7 +27,7 @@ from pathlib import Path
 # ============================================================
 # CONFIG (override via CLI args)
 # ============================================================
-DEFAULT_DASHBOARD_URL = "http://localhost:20129"
+DEFAULT_DASHBOARD_URL = "http://localhost:20128"
 DEFAULT_DASHBOARD_PASS = os.environ.get("DASHBOARD_PASS", "YOUR_DASHBOARD_PASSWORD")
 DEFAULT_GOOGLE_EMAIL = ""
 DEFAULT_GOOGLE_PASSWORD = ""
@@ -465,7 +465,7 @@ async def add_cline_provider(dashboard_url, dashboard_pass, google_email, google
 # CLI ENTRY POINT
 # ============================================================
 def parse_args():
-    parser = argparse.ArgumentParser(description='Add Cline OAuth provider to ChiperRouter')
+    parser = argparse.ArgumentParser(description='Add Cline OAuth provider to 9Router')
     parser.add_argument('--dashboard-url', default=DEFAULT_DASHBOARD_URL,
                         help=f'Dashboard URL (default: {DEFAULT_DASHBOARD_URL})')
     parser.add_argument('--dashboard-pass', default=DEFAULT_DASHBOARD_PASS,

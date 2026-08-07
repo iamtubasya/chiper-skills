@@ -1,5 +1,5 @@
 ---
-name: chiperrouter-add-antigravity
+name: 9router-add-antigravity
 description: Google OAuth automation with proven anti-detection. Mobile Chromium emulation, auto-ToS, auto-consent, exchange endpoint handling. 15+ bypass tests.
 triggers:
   - google oauth
@@ -9,21 +9,21 @@ triggers:
   - add provider oauth
   - antigravity oauth
 version: 3.0.0
-author: ChiperRouter
-tags: [automation, security, stealth, oauth, google, anti-detection, chiperflux]
+author: 9Router
+tags: [automation, security, stealth, oauth, google, anti-detection, 9router]
 ---
 
 # Google OAuth Stealth Automation v2
 
 ## Objective
 
-Automate Google OAuth flow for ChiperRouter provider setup with anti-detection, auto-ToS acceptance, auto-consent handling, and proper token exchange.
+Automate Google OAuth flow for 9Router provider setup with anti-detection, auto-ToS acceptance, auto-consent handling, and proper token exchange.
 
 ---
 
 ## ⚠️ CRITICAL: OAuth Flow Architecture
 
-**ChiperRouter/9Router OAuth does NOT save connections on callback GET!**
+**9Router/9Router OAuth does NOT save connections on callback GET!**
 
 The correct flow:
 ```
@@ -325,7 +325,7 @@ After script completes, verify connection saved:
 ```python
 # Check database
 import sqlite3
-conn = sqlite3.connect('/root/.9router or .chiperrouter/db/data.sqlite')
+conn = sqlite3.connect('/root/.9router or .9router/db/data.sqlite')
 cursor = conn.execute(
     "SELECT id, email, isActive FROM providerConnections WHERE provider='antigravity'"
 )
@@ -337,7 +337,7 @@ for row in cursor.fetchall():
 
 ## When to Use
 
-- Adding OAuth providers to ChiperRouter
+- Adding OAuth providers to 9Router
 - Automating Google account setup
 - Testing OAuth flows
 - Bulk provider configuration
@@ -357,7 +357,7 @@ When running multiple accounts (e.g. 10-50+):
 
 1. **Sequential vs Parallel**: ALWAYS run sequentially. Running parallel Playwright instances triggers Google's rate limits and bot detection much faster.
 2. **Timeouts**: 60 seconds is the sweet spot for a single account run. 30s is too short (EPIPE/Timeout errors), 45s is risky.
-3. **ChiperRouter Stability**: Heavy OAuth processing can crash the ChiperRouter node process. Always run the router with `pm2` or in a loop, or check its health between batches.
+3. **9Router Stability**: Heavy OAuth processing can crash the 9Router node process. Always run the router with `pm2` or in a loop, or check its health between batches.
 4. **Error Handling**: When running a bash wrapper loop, capture the python exit code (124 = timeout) and parse the output to determine exact status (SUCCESS, REJECTED, SUSPENDED, BLOCKED).
 
 ```bash
@@ -385,4 +385,4 @@ done
 ## References
 
 - `scripts/google_oauth_stealth.py` - Complete working script
-- `references/chiperflow.md` - ChiperRouter OAuth architecture details
+- `references/chiperflow.md` - 9Router OAuth architecture details

@@ -1,13 +1,13 @@
 ---
-name: chiperrouter-add-kiro
-description: Add new Kiro provider account via AWS Builder ID with Google OAuth to ChiperRouter Proxy dashboard
+name: 9router-add-kiro
+description: Add new Kiro provider account via AWS Builder ID with Google OAuth to 9Router Proxy dashboard
 tags: [automation, kiro, aws, oauth, google, playwright, stealth]
 version: 1.0.0
 ---
 
-# ChiperRouter Add Kiro Provider
+# 9Router Add Kiro Provider
 
-Automate adding new Kiro AI provider accounts to ChiperRouter Proxy dashboard via AWS Builder ID signup using Google OAuth.
+Automate adding new Kiro AI provider accounts to 9Router Proxy dashboard via AWS Builder ID signup using Google OAuth.
 
 ## Trigger Conditions
 - User asks to add new Kiro provider connection
@@ -15,7 +15,7 @@ Automate adding new Kiro AI provider accounts to ChiperRouter Proxy dashboard vi
 - Need to increase Kiro connections count on dashboard
 
 ## Prerequisites
-- ChiperRouter or 9router Proxy dashboard access (http://localhost:xxxx or https://domain.com)
+- 9Router or 9router Proxy dashboard access (http://localhost:xxxx or https://domain.com)
 - Google Workspace account
 - Playwright installed with chromium
 - Python 3.10+

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ChiperRouter - Add Kiro Provider via AWS Builder ID with Google OAuth
+9Router - Add Kiro Provider via AWS Builder ID with Google OAuth
 Ultra Stealth Mode - Maximum Anti-Detection
 
 CONFIGURATION: Update these values before running
@@ -15,8 +15,8 @@ from playwright.async_api import async_playwright
 # ============================================================
 # CONFIGURATION - UPDATE THESE VALUES
 # ============================================================
-DASHBOARD_URL = "https://xxxx/dashboard/providers/kiro" #Replace xxxx according to the requested URL, http://Localhost:xxxx or https://domain.com.
-LOGIN_URL = "https//xxxx/login" #Replace xxxx according to the requested URL, http://Localhost:xxxx or https://domain.com.
+DASHBOARD_URL = "http://localhost:20128/dashboard/providers/kiro" #Replace xxxx according to the requested URL, http://Localhost:xxxx or https://domain.com.
+LOGIN_URL = "http://localhost:20128/login" #Replace xxxx according to the requested URL, http://Localhost:xxxx or https://domain.com.
 DASHBOARD_PASS = "YOUR_DASHBOARD_PASSWORD"  # Replace with your password
 GOOGLE_EMAIL = "your-email@example.com"     # Replace with your Google account
 GOOGLE_PASS = "YOUR_GOOGLE_PASSWORD"        # Replace with your Google password

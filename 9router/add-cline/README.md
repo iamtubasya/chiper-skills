@@ -2,7 +2,7 @@
 
 ## What Is This?
 
-A complete automation skill to **add Cline OAuth provider accounts** to ChiperRouter dashboard via Google OAuth login. Uses Playwright with **Pixel 5 mobile emulation** to bypass Google's reCAPTCHA bot detection.
+A complete automation skill to **add Cline OAuth provider accounts** to 9Router dashboard via Google OAuth login. Uses Playwright with **Pixel 5 mobile emulation** to bypass Google's reCAPTCHA bot detection.
 
 ## For AI Agents (Claude, GPT, Hermes, etc.)
 
@@ -21,7 +21,7 @@ A complete automation skill to **add Cline OAuth provider accounts** to ChiperRo
 python3 scripts/add_cline_provider.py \
   --email user@gmail.com \
   --password yourpassword \
-  --dashboard-url http://localhost:20129 \
+  --dashboard-url http://localhost:20128 \
   --dashboard-pass YOUR_DASHBOARD_PASSWORD
 ```
 
@@ -52,7 +52,7 @@ cline-add-provider/
 ## How It Works (Summary)
 
 ```
-1. Login to ChiperRouter dashboard (localhost:20129)
+1. Login to 9Router dashboard (localhost:20128)
 2. Navigate to Providers → Cline
 3. Click "Add" → popup opens to authkit.cline.bot
 4. Click "Continue with Google" → Google Sign-in page
@@ -88,7 +88,7 @@ cline-add-provider/
 - Python 3.10+
 - Playwright (`pip3 install playwright`)
 - Chromium (`playwright install chromium`)
-- ChiperRouter running on localhost:20129
+- 9Router running on localhost:20128
 - Valid Google account credentials
 
 ## Tested & Verified

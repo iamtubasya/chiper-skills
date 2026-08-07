@@ -2,7 +2,7 @@
 
 ## What This Does
 
-Automates Google OAuth login for adding provider connections to ChiperRouter/9Router.
+Automates Google OAuth login for adding provider connections to 9Router/9Router.
 Uses anti-detection (stealth mode, mobile emulation, human-like typing) to bypass Google bot detection.
 
 **Proven: 50+ successful logins, 100% success rate on non-suspended accounts.**
@@ -52,7 +52,7 @@ bash scripts/batch_run.sh
 ## File Structure
 
 ```
-chiperrouter-add-antigravity/
+9router-add-antigravity/
 ├── README.md              ← This file
 ├── SKILL.md               ← Full documentation & pitfalls
 ├── config.env.example     ← Config template
@@ -72,7 +72,7 @@ Edit `config.env.example` → save as `/tmp/oauth_config.env`:
 | EMAIL | Google account email | `user@gmail.com` |
 | PASSWORD | Google account password | `mypassword` |
 | PROVIDER | OAuth provider name | `antigravity` |
-| OAUTH_URL | ChiperRouter base URL | `http://localhost:20128` |
+| OAUTH_URL | 9Router base URL | `http://localhost:20128` |
 
 ---
 
@@ -80,7 +80,7 @@ Edit `config.env.example` → save as `/tmp/oauth_config.env`:
 
 This skill is designed to be portable. Any Chiper agent can use it:
 
-1. Copy this folder to `~/.*/skills/chiperrouter/chiperrouter-add-antigravity/`
+1. Copy this folder to `~/.*/skills/9router/9router-add-antigravity/`
 2. Create `/tmp/oauth_config.env` with credentials
 3. Run the script
 
@@ -91,7 +91,7 @@ This skill is designed to be portable. Any Chiper agent can use it:
 write_file('/tmp/oauth_config.env', 'EMAIL=user@gmail.com\nPASSWORD=pass123\nPROVIDER=antigravity\nOAUTH_URL=http://localhost:20128')
 
 # 2. Run script
-terminal('timeout 60 python3 ~/.*/skills/chiperrouter/chiperrouter-add-antigravity/scripts/google_oauth_stealth.py')
+terminal('timeout 60 python3 ~/.*/skills/9router/9router-add-antigravity/scripts/google_oauth_stealth.py')
 
 # 3. Check result
 # Output contains "CONNECTION SAVED SUCCESSFULLY!" on success
@@ -106,7 +106,7 @@ terminal('timeout 60 python3 ~/.*/skills/chiperrouter/chiperrouter-add-antigravi
 - **Batch**: Run sequentially, NOT parallel. Google rate-limits parallel logins.
 - **2FA**: Does NOT work with 2FA enabled accounts.
 - **Suspended**: If account shows `/rejected` → account is suspended by Google.
-- **Server crash**: Heavy OAuth load can crash ChiperRouter. Monitor health.
+- **Server crash**: Heavy OAuth load can crash 9Router. Monitor health.
 - **ARM64**: Use `executable_path='/usr/bin/chromium'` for system chromium.
 
 ---
