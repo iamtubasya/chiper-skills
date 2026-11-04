@@ -10,7 +10,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_FILE="${SCRIPT_DIR}/install.log"
-CHIPER_VENV="${HOME}/.hermes/venv"
+CHIPER_VENV="${HOME}/.Chiper/venv"
 GOBIN="${HOME}/go/bin"
 
 # Colors

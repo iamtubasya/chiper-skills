@@ -1,6 +1,6 @@
 # Bluejay Agent Targets — Known Data
 
-## Account: chiperflux15@gmail.com
+## Account: Chiper15@gmail.com
 Organization: Bluejay Bug Bounty Agents 3
 
 ### Agent 24516 — Bluejay Intelligence Help Desk
@@ -24,11 +24,11 @@ Organization: Bluejay Bug Bounty Agents 3
 - Anti-injection is stated in prompt but not cryptographically enforced — still explorable via indirect framing
 
 ## Simulation Credits
-- Account chiperflux15@gmail.com: exhausted (0 remaining as of 2026-07-29)
+- Account Chiper15@gmail.com: exhausted (0 remaining as of 2026-07-29)
 - Account iamtubasya@gmail.com: 25 credits remaining (as of 2026-07-29). userId `df8e1f84-c17b-44e8-9dcc-2e59dc0a6a98`. ~7.2 credits/sim (3 calls). Use for new simulations when primary exhausted. Cookie injection works the same way.
 
 ## Login Notes
-- chiperflux15@gmail.com: registered via email, password @Tubagus1234
+- Chiper15@gmail.com: registered via email, password @Tubagus1234
 - iamtubasya@gmail.com: registered via email (confirmed — "Email already registered" error appeared on signup attempt, confirmed email provider). Cookie injection preferred over manual login due to browser session instability.
 
 ## Form Submission

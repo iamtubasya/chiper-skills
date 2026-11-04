@@ -26,8 +26,8 @@ This skill installs all 302 tools referenced across 145 `chiper-*` skills:
 
 ```bash
 # One-liner: run the full installer
-chmod +x ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
-~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
+chmod +x ~/.chiper/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
+~/.chiper/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 ```
 
 ---
@@ -69,7 +69,7 @@ Run `chiper-verify` to confirm all tools are installed.
 
 ```bash
 # Verify installation
-~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/verify.sh
+~/.chiper/skills/chiper-cyber/chiper-bootstrap/scripts/verify.sh
 
 # Expected output:
 # ✅ apt packages:    223/223
@@ -111,9 +111,9 @@ sudo rm /etc/apt/preferences.d/kali-pin
 sudo apt update
 
 # If pip fails: recreate venv
-rm -rf ~/.hermes/venv
-python3 -m venv ~/.hermes/venv
-source ~/.hermes/venv/bin/activate
+rm -rf ~/.Chiper/venv
+python3 -m venv ~/.Chiper/venv
+source ~/.Chiper/venv/bin/activate
 
 # If Go tools fail: check Go version
 go version  # need 1.21+
@@ -121,6 +121,6 @@ go version  # need 1.21+
 
 ## Notes
 
-- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+- Source: Chiper-Cyber v1.0.0 — Security Skills Ecosystem (Chiper 2026)
 - Defense Triple: Defense Perspective + Detection Methods + Evasion Techniques
-- Update: `cd ~/.hermes/skills/chiper-cyber && git pull`
+- Update: `cd ~/.chiper/skills/chiper-cyber && git pull`

@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-CHIPER_VENV="${HOME}/.hermes/venv"
+CHIPER_VENV="${HOME}/.Chiper/venv"
 GOBIN="${HOME}/go/bin"
 
 found=0
@@ -196,5 +196,5 @@ echo -e "${BLUE}═════════════════════�
 
 if [ "$missing" -gt 0 ]; then
     echo -e "\n${YELLOW}💡 Run the installer to fix missing tools:${NC}"
-    echo "   bash ~/.hermes/skills/chiper-bootstrap/scripts/install.sh"
+    echo "   bash ~/.Chiper/skills/chiper-bootstrap/scripts/install.sh"
 fi

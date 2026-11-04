@@ -1,18 +1,18 @@
 # Chiper-Cyber
 
-**144 security skill domains** untuk Hermes Agent — 302 tools, cross-platform.
+**147 security skill domains** untuk Chiper Agent — 302 tools, cross-platform.
 
 ## Install
 
 ```bash
-cp -r chiper-cyber ~/.hermes/skills/
-bash ~/.hermes/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
+cp -r chiper-cyber ~/.chiper/skills/
+bash ~/.chiper/skills/chiper-cyber/chiper-bootstrap/scripts/install.sh
 ```
 
 ## Update
 
 ```bash
-cd ~/.hermes/skills/chiper-cyber && git pull
+cd ~/.chiper/skills/chiper-cyber && git pull
 ```
 
 ## Skills (144 total)
@@ -91,16 +91,16 @@ chiper-cyber/
 ├── chiper-bootstrap/           ← MUST RUN FIRST
 │   ├── scripts/install.sh      ← Install 302 tools
 │   └── scripts/verify.sh       ← Verify installation
-├── chiper-kali-tools/          ← Tool selection reference
-├── chiper-kali-identity/       ← 12 Hacker Laws
+├── chiper-tools/          ← Tool selection reference
+├── chiper-tools/       ← 12 Hacker Laws
 ├── chiper-web-sqli/            ← SQL injection
 └── ... (144 skills)
 ```
 
 ## Author
 
-**ChiperFlux** (Chiper-Cyber)
+**Chiper** (Chiper-Cyber)
 
 ## Source
 
-Chiper-Cyber v1.0.0 — Security Skills Ecosystem (ChiperFlux 2026)
+Chiper-Cyber v1.0.0 — Security Skills Ecosystem (Chiper 2026)

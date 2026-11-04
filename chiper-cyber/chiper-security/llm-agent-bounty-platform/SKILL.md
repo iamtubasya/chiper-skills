@@ -4,7 +4,7 @@ description: "Use when exploiting LLM agents on vendor sim platforms."
 version: "1.0.0"
 author: chiper
 metadata:
-  hermes:
+  Chiper:
     tags: [pentest, llm, agent, bounty, bluejay, simulation, prompt-injection]
 ---
 
